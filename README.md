@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📁 Malfy
 
-## Getting Started
+**Live demo:** https://malfy.vercel.app
 
-First, run the development server:
+Malfy is a cloud file storage app in the spirit of Google Drive, built with a simpler, more focused interface. Sign in with a one-time email code, upload files, and manage them from a clean dashboard.
 
+---
+
+## ✨ Features
+
+- **Passwordless login**: sign up and sign in with a one-time code sent to your email, no password to manage.
+- **File upload**: drag-and-drop file uploads stored in Appwrite.
+- **Browse & organize**: view files by type, search by name, and sort by date, name, or size.
+- **File actions**: rename, share with another user by email, download, and delete.
+- **Storage usage chart**: see how much space each file type (images, documents, video, audio, other) is using, out of your available quota.
+- **Responsive UI**: a sidebar on desktop and a mobile-friendly navigation menu, built with Tailwind CSS and shadcn/ui components.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js (App Router) with TypeScript
+- **Backend/Storage**: Appwrite (authentication, database, file storage)
+- **UI**: Tailwind CSS, shadcn/ui (Radix primitives), Lucide icons
+- **Forms**: React Hook Form with Zod validation
+- **Charts**: Recharts
+
+---
+
+## 🏃 Getting Started Locally
+
+### 1. Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Set Up Environment Variables
+Create a `.env.local` file with your Appwrite project credentials (endpoint, project ID, API key, database ID, storage bucket ID, and collection IDs). See `src/lib/appwrite/config.ts` for the exact variable names the app expects.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Start the Development Server
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed on [Vercel](https://vercel.com). Environment variables need to be configured in the Vercel project settings to match your Appwrite instance.
